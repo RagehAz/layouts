@@ -6,7 +6,8 @@ class PullToRefresh extends StatelessWidget {
     @required this.child,
     @required this.fadeOnBuild,
     @required this.onRefresh,
-    @required this.indicatorColor,
+    this.circleColor = const Color.fromARGB(230, 230, 230, 230),
+    this.arrowColor = const Color.fromARGB(230, 0, 0, 0),
     this.fadingMilliseconds = 700,
     this.displacement = 50,
     this.strokeWidth = 4,
@@ -17,7 +18,8 @@ class PullToRefresh extends StatelessWidget {
   final Function onRefresh;
   final bool fadeOnBuild;
   final Widget child;
-  final Color indicatorColor;
+  final Color circleColor;
+  final Color arrowColor;
   final int fadingMilliseconds;
   final double displacement;
   final double strokeWidth;
@@ -34,8 +36,8 @@ class PullToRefresh extends StatelessWidget {
           }
 
         },
-        color: const Color.fromARGB(230, 0, 0, 0),
-        backgroundColor: indicatorColor,
+        color: arrowColor,
+        backgroundColor: circleColor,
         displacement: displacement,
         strokeWidth: strokeWidth,
         edgeOffset: edgeOffset,
