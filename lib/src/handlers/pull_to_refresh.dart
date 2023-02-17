@@ -27,7 +27,13 @@ class PullToRefresh extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return RefreshIndicator(
-        onRefresh: onRefresh,
+        onRefresh: () async {
+
+          if (onRefresh != null){
+            await onRefresh();
+          }
+
+        },
         color: const Color.fromARGB(230, 0, 0, 0),
         backgroundColor: indicatorColor,
         displacement: displacement,
