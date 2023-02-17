@@ -9,8 +9,8 @@ class PullToRefresh extends StatelessWidget {
     @required this.indicatorColor,
     this.fadingMilliseconds = 700,
     this.displacement = 50,
-    this.strokeWidth,
-    this.edgeOffset,
+    this.strokeWidth = 4,
+    this.edgeOffset = 50,
     Key key
   }) : super(key: key);
   /// --------------------------------------------------------------------------
